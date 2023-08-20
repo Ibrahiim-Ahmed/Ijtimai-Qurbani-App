@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:ijtimai_qurbani_app/main.dart';
+import 'package:ijtimai_qurbani_app/pages/registerScreen.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -12,11 +13,9 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 2), () {
       Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-              builder: (context) => MyHomePage(title: "Ijtimai Qurbani App")));
+          context, MaterialPageRoute(builder: (context) => RegisterScreen()));
     });
   }
 
@@ -29,6 +28,11 @@ class _SplashState extends State<Splash> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(height: 20),
+            Image.asset(
+              'lib/assets/goat.png',
+              width: 200,
+              height: 200,
+            ),
             Text(
               'Ijtimai Qurbani App',
               style: TextStyle(
