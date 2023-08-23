@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ijtimai_qurbani_app/pages/login.dart';
-import 'package:ijtimai_qurbani_app/pages/login.dart';
 import 'package:ijtimai_qurbani_app/pages/signup.dart';
 
 class RegisterScreen extends StatelessWidget {

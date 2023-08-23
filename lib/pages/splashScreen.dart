@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:ijtimai_qurbani_app/main.dart';
 import 'package:ijtimai_qurbani_app/pages/registerScreen.dart';
 
 class Splash extends StatefulWidget {
