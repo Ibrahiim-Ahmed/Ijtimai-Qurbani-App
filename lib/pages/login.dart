@@ -6,7 +6,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: Center(
         child: Column(
@@ -22,7 +22,7 @@ class Login extends StatelessWidget {
                   fontWeight: FontWeight.w800),
             ),
             SizedBox(height: 50),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(20),
               child: TextField(
                 obscureText: true,
@@ -33,7 +33,7 @@ class Login extends StatelessWidget {
                 ),
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(20),
               child: TextField(
                 obscureText: true,
