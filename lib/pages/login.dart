@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:ijtimai_qurbani_app/pages/masjidDashboard.dart';
+import 'package:ijtimai_qurbani_app/pages/userDashboard.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  Login({super.key});
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passController = TextEditingController();
+  bool _validate = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +27,10 @@ class Login extends StatelessWidget {
                   fontWeight: FontWeight.w800),
             ),
             SizedBox(height: 50),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(20),
               child: TextField(
-                obscureText: true,
+                controller: emailController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'User Name',
@@ -33,9 +38,10 @@ class Login extends StatelessWidget {
                 ),
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(20),
               child: TextField(
+                controller: passController,
                 obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -47,12 +53,35 @@ class Login extends StatelessWidget {
             SizedBox(height: 30),
             ElevatedButton(
               onPressed: () => {
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => Signup()))
+                if (emailController.text == "masjid" &&
+                    passController.text == "123")
+                  {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MasjidDashboard()))
+                  }
+                else if (emailController.text == "user" &&
+                    passController.text == "456")
+                  {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => UserDashboard()))
+                  }
+                else
+                  {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Wrong User Name/Password'),
+                        backgroundColor: Colors.red,
+                      ),
+                    )
+                  }
               },
               child: Row(
                 children: [
-                  Text("Sign Up"),
+                  Text("Login"),
                 ],
               ),
               style: ElevatedButton.styleFrom(
