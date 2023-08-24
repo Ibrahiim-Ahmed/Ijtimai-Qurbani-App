@@ -36,8 +36,8 @@ class RegisterScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () => {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => const Signup()))
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Signup()))
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
