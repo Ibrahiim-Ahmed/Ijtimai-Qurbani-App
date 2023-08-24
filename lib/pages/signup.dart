@@ -14,15 +14,15 @@ class Signup extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             // ignore: prefer_const_literals_to_create_immutables
             children: [
-              SizedBox(height: 70),
-              Text(
+              const SizedBox(height: 100),
+              const Text(
                 "Sign Up",
                 style: TextStyle(
                     fontSize: 40,
                     color: Colors.green,
                     fontWeight: FontWeight.w800),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 50),
               const Padding(
                 padding: EdgeInsets.all(20),
                 child: TextField(
@@ -64,35 +64,15 @@ class Signup extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () => {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Signup()))
-                },
-                child: Row(
-                  children: [
-                    Text("Sign Up"),
-                  ],
-                ),
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    foregroundColor: Colors.white,
-                    fixedSize: Size(100, 40),
-                    textStyle: TextStyle(fontSize: 18)),
-              ),
-              SizedBox(
-                height: 30,
-              ),
               TextButton(
                   onPressed: () => {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Login(),
+                              builder: (context) => const Login(),
                             ))
                       },
-                  child: Text("Already Have An Account ?")),
+                  child: const Text("Already Have An Account ?")),
             ],
           ),
         ));

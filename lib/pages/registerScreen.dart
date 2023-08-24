@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ijtimai_qurbani_app/pages/login.dart';
-import 'package:ijtimai_qurbani_app/pages/login.dart';
 import 'package:ijtimai_qurbani_app/pages/signup.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -14,7 +13,7 @@ class RegisterScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Image.asset(
@@ -22,24 +21,29 @@ class RegisterScreen extends StatelessWidget {
               width: 100,
               height: 100,
             ),
-            SizedBox(
+            const SizedBox(
               height: 150,
             ),
-            Text(
+            const Text(
               "Register/Sign Yourself In As:",
               style: TextStyle(
                   fontSize: 28,
                   color: Colors.white,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 150,
             ),
             ElevatedButton(
               onPressed: () => {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Signup()))
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Signup()))
               },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  foregroundColor: Colors.green,
+                  fixedSize: const Size(130, 40),
+                  textStyle: const TextStyle(fontSize: 18)),
               child: Row(
                 children: [
                   Icon(
@@ -52,20 +56,20 @@ class RegisterScreen extends StatelessWidget {
                   Text("Masjid"),
                 ],
               ),
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.green,
-                  fixedSize: Size(130, 40),
-                  textStyle: TextStyle(fontSize: 18)),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ElevatedButton(
               onPressed: () => {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Login()))
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Login()))
               },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  foregroundColor: Colors.green,
+                  fixedSize: const Size(130, 40),
+                  textStyle: const TextStyle(fontSize: 18)),
               child: Row(
                 children: [
                   Icon(
@@ -78,11 +82,6 @@ class RegisterScreen extends StatelessWidget {
                   Text("Person"),
                 ],
               ),
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.green,
-                  fixedSize: Size(130, 40),
-                  textStyle: TextStyle(fontSize: 18)),
             ),
           ],
         ),
