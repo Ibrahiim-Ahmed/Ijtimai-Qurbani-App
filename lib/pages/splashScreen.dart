@@ -1,10 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:ijtimai_qurbani_app/main.dart';
 import 'package:ijtimai_qurbani_app/pages/registerScreen.dart';
 
 class Splash extends StatefulWidget {
+  const Splash({super.key});
+
   @override
   State<Splash> createState() => _SplashState();
 }
@@ -13,12 +14,13 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => RegisterScreen()));
+          context, MaterialPageRoute(builder: (context) => const RegisterScreen()));
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
@@ -27,13 +29,13 @@ class _SplashState extends State<Splash> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Image.asset(
               'lib/assets/goat.png',
               width: 200,
               height: 200,
             ),
-            Text(
+            const Text(
               'Ijtimai Qurbani App',
               style: TextStyle(
                 fontSize: 24,
@@ -41,8 +43,8 @@ class _SplashState extends State<Splash> {
                 color: Colors.green,
               ),
             ),
-            SizedBox(height: 250),
-            Text(
+            const SizedBox(height: 250),
+            const Text(
               "Developed By : Ibrahim Ahmed  &  S.M. Huzaifa",
               style: TextStyle(
                   color: Colors.black,
