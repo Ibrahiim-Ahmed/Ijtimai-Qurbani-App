@@ -44,7 +44,7 @@ class RegisterScreen extends StatelessWidget {
                   foregroundColor: Colors.green,
                   fixedSize: const Size(130, 40),
                   textStyle: const TextStyle(fontSize: 18)),
-              child: const Row(
+              child: Row(
                 children: [
                   Icon(
                     Icons.mosque_outlined,
@@ -62,15 +62,15 @@ class RegisterScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () => {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => const Login()))
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Login()))
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.green,
                   fixedSize: const Size(130, 40),
                   textStyle: const TextStyle(fontSize: 18)),
-              child: const Row(
+              child: Row(
                 children: [
                   Icon(
                     Icons.person_outline,

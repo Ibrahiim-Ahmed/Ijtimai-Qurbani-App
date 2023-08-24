@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ijtimai_qurbani_app/api/apis.dart';
+import 'package:ijtimai_qurbani_app/pages/masjidDashboard.dart';
+import 'package:ijtimai_qurbani_app/pages/userDashboard.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -76,13 +78,45 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
-            Visibility(
-              visible: errorMessage.isNotEmpty,
-              child: Text(
-                errorMessage,
-                style: const TextStyle(color: Colors.red),
+            SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: () => {
+                if (usernameController.text == "masjid" &&
+                    passwordController.text == "123")
+                  {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MasjidDashboard()))
+                  }
+                else if (usernameController.text == "user" &&
+                    passwordController.text == "456")
+                  {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => UserDashboard()))
+                  }
+                else
+                  {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Wrong User Name/Password'),
+                        backgroundColor: Colors.red,
+                      ),
+                    )
+                  }
+              },
+              child: Row(
+                children: [
+                  Text("Log In"),
+                ],
               ),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                  fixedSize: Size(85, 50),
+                  textStyle: TextStyle(fontSize: 18)),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
