@@ -31,7 +31,7 @@ class _LoginState extends State<Login> {
       }
     }).catchError((error) {
       setState(() {
-        errorMessage = error.toString(); // Display the detailed error message.
+        errorMessage = 'An error occurred during login.';
       });
     });
   }
@@ -49,7 +49,7 @@ class _LoginState extends State<Login> {
               "Log In",
               style: TextStyle(
                 fontSize: 40,
-                color: Colors.brown,
+                color: Color.fromARGB(255, 68, 40, 30),
                 fontWeight: FontWeight.w800,
               ),
             ),
@@ -113,7 +113,7 @@ class _LoginState extends State<Login> {
                 ],
               ),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.brown,
+                  backgroundColor: Color.fromARGB(255, 68, 40, 30),
                   foregroundColor: Colors.white,
                   fixedSize: Size(85, 50),
                   textStyle: TextStyle(fontSize: 18)),

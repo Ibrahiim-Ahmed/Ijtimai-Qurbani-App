@@ -19,7 +19,7 @@ class Signup extends StatelessWidget {
                 "Sign Up",
                 style: TextStyle(
                     fontSize: 40,
-                    color: Colors.brown,
+                    color: Color.fromARGB(255, 68, 40, 30),
                     fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: 40),
@@ -72,7 +72,7 @@ class Signup extends StatelessWidget {
                   ],
                 ),
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.brown,
+                    backgroundColor: Color.fromARGB(255, 68, 40, 30),
                     foregroundColor: Colors.white,
                     fixedSize: Size(100, 50),
                     textStyle: TextStyle(fontSize: 18)),

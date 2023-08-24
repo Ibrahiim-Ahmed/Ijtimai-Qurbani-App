@@ -17,12 +17,16 @@ class UserDashboard extends StatelessWidget {
             height: 20,
           ),
           const Text(
-            " Welcome User",
+            " Welcome \n User ",
             style: TextStyle(
-                fontSize: 26, color: Colors.brown, fontWeight: FontWeight.bold),
+                fontSize: 40,
+                color: Color.fromARGB(255, 68, 40, 30),
+                decoration: TextDecoration.underline,
+                decorationColor: Color.fromARGB(255, 68, 40, 30),
+                fontWeight: FontWeight.bold),
           ),
           SizedBox(
-            height: 20,
+            height: 50,
           ),
           Row(children: [
             const SizedBox(
@@ -82,12 +86,14 @@ class UserDashboard extends StatelessWidget {
             ),
           ]),
           const SizedBox(
-            height: 80,
+            height: 50,
           ),
           const Text(
             "  Current Bookings",
             style: TextStyle(
-                fontSize: 26, color: Colors.brown, fontWeight: FontWeight.bold),
+                fontSize: 26,
+                color: Color.fromARGB(255, 68, 40, 30),
+                fontWeight: FontWeight.bold),
           ),
           Container(
             margin: EdgeInsets.symmetric(vertical: 30),
@@ -155,12 +161,14 @@ class UserDashboard extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 50,
+            height: 30,
           ),
           const Text(
             "  Past Bookings",
             style: TextStyle(
-                fontSize: 26, color: Colors.brown, fontWeight: FontWeight.bold),
+                fontSize: 26,
+                color: Color.fromARGB(255, 68, 40, 30),
+                fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 50,
