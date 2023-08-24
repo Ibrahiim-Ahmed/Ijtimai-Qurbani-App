@@ -119,16 +119,6 @@ class _LoginState extends State<Login> {
                   textStyle: TextStyle(fontSize: 18)),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                _handleLogin(context);
-              },
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
-              child: const Padding(
-                padding: EdgeInsets.all(10),
-                child: Text('Log In', style: TextStyle(fontSize: 16)),
-              ),
-            ),
           ],
         ),
       ),

@@ -64,6 +64,19 @@ class Signup extends StatelessWidget {
                   ),
                 ),
               ),
+              ElevatedButton(
+                onPressed: () => {},
+                child: Row(
+                  children: [
+                    Text("Sign Up"),
+                  ],
+                ),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    foregroundColor: Colors.white,
+                    fixedSize: Size(85, 50),
+                    textStyle: TextStyle(fontSize: 18)),
+              ),
               TextButton(
                   onPressed: () => {
                         Navigator.push(

@@ -29,7 +29,11 @@ class UserDashboard extends StatelessWidget {
               width: 160,
               height: 120,
               decoration: BoxDecoration(
-                  color: Colors.grey, borderRadius: BorderRadius.circular(20)),
+                  image: const DecorationImage(
+                      image: AssetImage("lib/assets/cow_card_image.png"),
+                      fit: BoxFit.cover),
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.circular(20)),
             ),
             const SizedBox(
               width: 20,
@@ -38,7 +42,11 @@ class UserDashboard extends StatelessWidget {
               width: 160,
               height: 120,
               decoration: BoxDecoration(
-                  color: Colors.grey, borderRadius: BorderRadius.circular(20)),
+                  image: const DecorationImage(
+                      image: AssetImage("lib/assets/goat_card_image.png"),
+                      fit: BoxFit.cover),
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.circular(20)),
             ),
             const SizedBox(
               height: 20,
