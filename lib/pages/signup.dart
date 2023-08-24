@@ -26,7 +26,6 @@ class Signup extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.all(20),
                 child: TextField(
-                  obscureText: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'First Name',
@@ -37,7 +36,6 @@ class Signup extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.all(20),
                 child: TextField(
-                  obscureText: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Last Name',
@@ -48,7 +46,6 @@ class Signup extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.all(20),
                 child: TextField(
-                  obscureText: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Email Address',

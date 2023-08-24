@@ -81,13 +81,13 @@ class Login extends StatelessWidget {
               },
               child: Row(
                 children: [
-                  Text("Login"),
+                  Text("Log In"),
                 ],
               ),
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
                   foregroundColor: Colors.white,
-                  fixedSize: Size(100, 40),
+                  fixedSize: Size(85, 50),
                   textStyle: TextStyle(fontSize: 18)),
             ),
             SizedBox(
