@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ijtimai_qurbani_app/pages/cow_inventory.dart';
+import 'package:ijtimai_qurbani_app/pages/goat_inventory.dart';
 
 class UserDashboard extends StatelessWidget {
   const UserDashboard({super.key});
@@ -16,7 +18,8 @@ class UserDashboard extends StatelessWidget {
           ),
           const Text(
             " Welcome User",
-            style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontSize: 26, color: Colors.brown, fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 20,
@@ -25,28 +28,54 @@ class UserDashboard extends StatelessWidget {
             const SizedBox(
               width: 20,
             ),
-            Container(
-              width: 160,
-              height: 120,
-              decoration: BoxDecoration(
-                  image: const DecorationImage(
-                      image: AssetImage("lib/assets/cow_card_image.png"),
-                      fit: BoxFit.cover),
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(20)),
+            GestureDetector(
+              onTap: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CowInventory()))
+              },
+              child: Container(
+                width: 160,
+                height: 120,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(0.0, 1.0), //(x,y)
+                        blurRadius: 5.0,
+                      ),
+                    ],
+                    image: const DecorationImage(
+                        image: AssetImage("lib/assets/cow_card_image.png"),
+                        fit: BoxFit.cover),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20)),
+              ),
             ),
             const SizedBox(
               width: 20,
             ),
-            Container(
-              width: 160,
-              height: 120,
-              decoration: BoxDecoration(
-                  image: const DecorationImage(
-                      image: AssetImage("lib/assets/goat_card_image.png"),
-                      fit: BoxFit.cover),
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(20)),
+            GestureDetector(
+              onTap: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GoatInventory()))
+              },
+              child: Container(
+                width: 160,
+                height: 120,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(0.0, 1.0), //(x,y)
+                        blurRadius: 5.0,
+                      ),
+                    ],
+                    image: const DecorationImage(
+                        image: AssetImage("lib/assets/goat_card_image.png"),
+                        fit: BoxFit.cover),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20)),
+              ),
             ),
             const SizedBox(
               height: 20,
@@ -57,13 +86,14 @@ class UserDashboard extends StatelessWidget {
           ),
           const Text(
             "  Current Bookings",
-            style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontSize: 26, color: Colors.brown, fontWeight: FontWeight.bold),
           ),
           Container(
             margin: EdgeInsets.symmetric(vertical: 30),
             child: Table(
               defaultColumnWidth: FixedColumnWidth(60.0),
-              border: TableBorder.all(style: BorderStyle.none),
+              border: TableBorder.symmetric(),
               children: [
                 TableRow(children: [
                   Column(children: [
@@ -129,7 +159,8 @@ class UserDashboard extends StatelessWidget {
           ),
           const Text(
             "  Past Bookings",
-            style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontSize: 26, color: Colors.brown, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 50,
