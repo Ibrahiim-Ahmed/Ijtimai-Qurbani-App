@@ -14,7 +14,7 @@ class Signup extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             // ignore: prefer_const_literals_to_create_immutables
             children: [
-              SizedBox(height: 100),
+              SizedBox(height: 70),
               Text(
                 "Sign Up",
                 style: TextStyle(
@@ -22,7 +22,7 @@ class Signup extends StatelessWidget {
                     color: Colors.green,
                     fontWeight: FontWeight.w800),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 40),
               const Padding(
                 padding: EdgeInsets.all(20),
                 child: TextField(
@@ -66,6 +66,26 @@ class Signup extends StatelessWidget {
                     hintText: 'Enter Password',
                   ),
                 ),
+              ),
+              SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () => {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Signup()))
+                },
+                child: Row(
+                  children: [
+                    Text("Sign Up"),
+                  ],
+                ),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    foregroundColor: Colors.white,
+                    fixedSize: Size(100, 40),
+                    textStyle: TextStyle(fontSize: 18)),
+              ),
+              SizedBox(
+                height: 30,
               ),
               TextButton(
                   onPressed: () => {

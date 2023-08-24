@@ -44,6 +44,26 @@ class Login extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: () => {
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => Signup()))
+              },
+              child: Row(
+                children: [
+                  Text("Sign Up"),
+                ],
+              ),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                  fixedSize: Size(100, 40),
+                  textStyle: TextStyle(fontSize: 18)),
+            ),
+            SizedBox(
+              height: 30,
+            ),
           ],
         ),
       ),
