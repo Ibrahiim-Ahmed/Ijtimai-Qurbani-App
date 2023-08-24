@@ -14,15 +14,15 @@ class Signup extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             // ignore: prefer_const_literals_to_create_immutables
             children: [
-              const SizedBox(height: 100),
+              const SizedBox(height: 80),
               const Text(
                 "Sign Up",
                 style: TextStyle(
                     fontSize: 40,
-                    color: Colors.green,
+                    color: Colors.brown,
                     fontWeight: FontWeight.w800),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 40),
               const Padding(
                 padding: EdgeInsets.all(20),
                 child: TextField(
@@ -72,9 +72,9 @@ class Signup extends StatelessWidget {
                   ],
                 ),
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
+                    backgroundColor: Colors.brown,
                     foregroundColor: Colors.white,
-                    fixedSize: Size(85, 50),
+                    fixedSize: Size(100, 50),
                     textStyle: TextStyle(fontSize: 18)),
               ),
               TextButton(

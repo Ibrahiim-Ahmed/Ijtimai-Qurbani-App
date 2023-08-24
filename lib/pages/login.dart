@@ -49,7 +49,7 @@ class _LoginState extends State<Login> {
               "Log In",
               style: TextStyle(
                 fontSize: 40,
-                color: Colors.green,
+                color: Colors.brown,
                 fontWeight: FontWeight.w800,
               ),
             ),
@@ -113,7 +113,7 @@ class _LoginState extends State<Login> {
                 ],
               ),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
+                  backgroundColor: Colors.brown,
                   foregroundColor: Colors.white,
                   fixedSize: Size(85, 50),
                   textStyle: TextStyle(fontSize: 18)),

@@ -15,8 +15,8 @@ class _SplashState extends State<Splash> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 2), () {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const RegisterScreen()));
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => const RegisterScreen()));
     });
   }
 
@@ -40,7 +40,7 @@ class _SplashState extends State<Splash> {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.green,
+                color: Colors.brown,
               ),
             ),
             const SizedBox(height: 250),

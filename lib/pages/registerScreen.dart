@@ -41,7 +41,7 @@ class RegisterScreen extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
-                  foregroundColor: Colors.green,
+                  foregroundColor: Colors.brown,
                   fixedSize: const Size(130, 40),
                   textStyle: const TextStyle(fontSize: 18)),
               child: Row(
@@ -67,7 +67,7 @@ class RegisterScreen extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
-                  foregroundColor: Colors.green,
+                  foregroundColor: Colors.brown,
                   fixedSize: const Size(130, 40),
                   textStyle: const TextStyle(fontSize: 18)),
               child: Row(
@@ -86,7 +86,7 @@ class RegisterScreen extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.brown,
     );
   }
 }
