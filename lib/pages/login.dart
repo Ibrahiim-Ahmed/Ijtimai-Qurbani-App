@@ -29,7 +29,7 @@ class _LoginState extends State<Login> {
       }
     }).catchError((error) {
       setState(() {
-        errorMessage = 'An error occurred during login.';
+        errorMessage = error.toString(); // Display the detailed error message.
       });
     });
   }
