@@ -45,7 +45,7 @@ class _SplashState extends State<Splash> {
             ),
             const SizedBox(height: 250),
             const Text(
-              "Developed By : Ibrahim Ahmed  &  S.M. Huzaifa",
+              "Developed By : Ibrahim Ahmed  &  S.M. Huzaifa ",
               style: TextStyle(
                   color: Colors.black,
                   backgroundColor: Colors.white,
