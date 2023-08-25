@@ -2,92 +2,76 @@ import 'package:flutter/material.dart';
 import 'package:ijtimai_qurbani_app/pages/login.dart';
 
 class Signup extends StatelessWidget {
-  const Signup({super.key});
+  const Signup({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            // ignore: prefer_const_literals_to_create_immutables
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 80),
               const Text(
                 "Sign Up",
                 style: TextStyle(
-                    fontSize: 40,
-                    color: Color.fromARGB(255, 68, 40, 30),
-                    fontWeight: FontWeight.w800),
+                  fontSize: 40,
+                  color: Color.fromARGB(255, 68, 40, 30),
+                  fontWeight: FontWeight.w800,
+                ),
               ),
               const SizedBox(height: 40),
-              const Padding(
-                padding: EdgeInsets.all(20),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'First Name',
-                    hintText: 'Enter First Name',
-                  ),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(20),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Last Name',
-                    hintText: 'Enter Last Name',
-                  ),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(20),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Email Address',
-                    hintText: 'Enter Email',
-                  ),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(20),
-                child: TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password',
-                    hintText: 'Enter Password',
-                  ),
-                ),
-              ),
+              _buildTextField("First Name", "Enter First Name"),
+              const SizedBox(height: 20),
+              _buildTextField("Last Name", "Enter Last Name"),
+              const SizedBox(height: 20),
+              _buildTextField("Email Address", "Enter Email"),
+              const SizedBox(height: 20),
+              _buildTextField("Password", "Enter Password", obscureText: true),
+              const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () => {},
-                child: Row(
-                  children: [
-                    Text("Sign Up"),
-                  ],
-                ),
+                onPressed: () {
+                  // Implement your sign-up logic here
+                },
+                child: const Text("Sign Up"),
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 68, 40, 30),
-                    foregroundColor: Colors.white,
-                    fixedSize: Size(100, 50),
-                    textStyle: TextStyle(fontSize: 18)),
+                  backgroundColor: const Color.fromARGB(255, 68, 40, 30),
+                  foregroundColor: Colors.white,
+                  fixedSize: const Size(100, 50),
+                  textStyle: const TextStyle(fontSize: 18),
+                ),
               ),
               TextButton(
-                  onPressed: () => {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Login(),
-                            ))
-                      },
-                  child: const Text("Already Have An Account ?")),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Login()),
+                  );
+                },
+                child: const Text("Already Have An Account ?"),
+              ),
             ],
           ),
-        ));
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTextField(String labelText, String hintText,
+      {bool obscureText = false}) {
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: TextField(
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          border: const OutlineInputBorder(),
+          labelText: labelText,
+          hintText: hintText,
+        ),
+      ),
+    );
   }
 }
