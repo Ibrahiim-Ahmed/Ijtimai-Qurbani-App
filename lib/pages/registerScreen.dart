@@ -3,90 +3,71 @@ import 'package:ijtimai_qurbani_app/pages/login.dart';
 import 'package:ijtimai_qurbani_app/pages/signup.dart';
 
 class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key});
+  const RegisterScreen({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 204, 124, 95),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(
-              height: 50,
-            ),
+            SizedBox(height: 50),
             Image.asset(
               'lib/assets/goat.png',
               width: 100,
               height: 100,
             ),
-            const SizedBox(
-              height: 150,
-            ),
-            const Text(
+            SizedBox(height: 100),
+            Text(
               "Register/Sign Yourself In As:",
               style: TextStyle(
-                  fontSize: 28,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w800),
-            ),
-            const SizedBox(
-              height: 150,
-            ),
-            ElevatedButton(
-              onPressed: () => {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Signup()))
-              },
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.brown,
-                  fixedSize: const Size(130, 40),
-                  textStyle: const TextStyle(fontSize: 18)),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.mosque_outlined,
-                    size: 20,
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Text("Masjid"),
-                ],
+                fontSize: 28,
+                color: Colors.white,
+                fontWeight: FontWeight.w800,
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            ElevatedButton(
-              onPressed: () => {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Login()))
-              },
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.brown,
-                  fixedSize: const Size(130, 40),
-                  textStyle: const TextStyle(fontSize: 18)),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.person_outline,
-                    size: 20,
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Text("Person"),
-                ],
-              ),
-            ),
+            SizedBox(height: 100),
+            _buildOptionButton(
+                context, Icons.mosque_outlined, "Masjid", Signup()),
+            SizedBox(height: 20),
+            _buildOptionButton(
+                context, Icons.person_outline, "Person", Login()),
           ],
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 204, 124, 95),
+    );
+  }
+
+  Widget _buildOptionButton(
+      BuildContext context, IconData icon, String label, Widget page) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => page),
+        );
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.brown,
+        fixedSize: const Size(130, 40),
+        textStyle: const TextStyle(fontSize: 18),
+      ),
+      child: Row(
+        children: [
+          Icon(
+            icon,
+            size: 20,
+          ),
+          SizedBox(width: 15),
+          Text(
+            label,
+            style: TextStyle(fontSize: 16), // Adjust the font size as needed
+          ),
+        ],
+      ),
     );
   }
 }
