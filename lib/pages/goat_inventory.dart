@@ -91,7 +91,8 @@ class GoatInventory extends StatelessWidget {
                                         context: context,
                                         builder: (context) {
                                           return AlertDialog(
-                                            title: Text("Booking Confirmation"),
+                                            title:
+                                                Text("Booking Confirmation "),
                                             content: Text(
                                                 "You've booked This Goat of Id no. $idNumber."),
                                             actions: [
