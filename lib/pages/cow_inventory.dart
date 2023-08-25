@@ -7,7 +7,6 @@ class CowInventory extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
 
-    // Define the number of rows and columns for the cinema seat grid
     final int rowCount = 10;
     final int columnCount = 7;
 
@@ -23,11 +22,10 @@ class CowInventory extends StatelessWidget {
                   decoration: TextDecoration.underline,
                   decorationColor: Color.fromARGB(255, 68, 40, 30),
                   fontWeight: FontWeight.bold),
-            ), // Replace with an appropriate title
+            ),
             SizedBox(
               height: 50,
             ),
-            // Create the cinema seat grid
             GridView.builder(
               shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -37,12 +35,10 @@ class CowInventory extends StatelessWidget {
               ),
               itemCount: rowCount * columnCount,
               itemBuilder: (BuildContext context, int index) {
-                // Calculate the row and column for the current index
                 int row = index ~/ columnCount + 1;
                 int column = index % columnCount + 1;
-                int seatNumber = row * columnCount - columnCount + column;
+                int idNumber = row * columnCount - columnCount + column;
 
-                // Customize seat appearance based on your needs
                 Color seatColor = Colors.white;
 
                 return GestureDetector(
@@ -51,31 +47,70 @@ class CowInventory extends StatelessWidget {
                     showModalBottomSheet(
                       context: context,
                       builder: (context) {
-                        return Container(
-                          padding: EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                "Seat $seatNumber Details",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                ),
+                        int? selectedQuantity = 1;
+
+                        return StatefulBuilder(
+                          builder: (context, setState) {
+                            return Container(
+                              padding: EdgeInsets.all(16),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    "Cow's Id no. $idNumber Details",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text(
+                                      "Available Hissa of this Cow : 4 \n Price per Hissa : 20,000 \n Other Details \n Other Details"),
+                                  SizedBox(height: 20),
+                                  DropdownButton<int>(
+                                    value: selectedQuantity,
+                                    onChanged: (newValue) {
+                                      setState(() {
+                                        selectedQuantity = newValue;
+                                      });
+                                    },
+                                    items: List.generate(7, (index) {
+                                      return DropdownMenuItem<int>(
+                                        value: index + 1,
+                                        child: Text('${index + 1}'),
+                                      );
+                                    }),
+                                  ),
+                                  SizedBox(height: 20),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return AlertDialog(
+                                            title: Text("Booking Confirmation"),
+                                            content: Text(
+                                                "You've booked $selectedQuantity Hissa(s) for Cow's Id no. $idNumber."),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                },
+                                                child: Text("OK"),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                    },
+                                    child: Text("Book it"),
+                                  ),
+                                ],
                               ),
-                              SizedBox(height: 10),
-                              Text(
-                                  "Here you can book the seat or show more details."),
-                              SizedBox(height: 20),
-                              ElevatedButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: Text("Close"),
-                              ),
-                            ],
-                          ),
+                            );
+                          },
                         );
                       },
                     );
@@ -99,7 +134,7 @@ class CowInventory extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        seatNumber.toString(),
+                        idNumber.toString(),
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
