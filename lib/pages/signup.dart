@@ -10,28 +10,30 @@ class Signup extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Center(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 80),
+              const SizedBox(height: 30),
               const Text(
                 "Sign Up",
                 style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 36,
                   color: Color.fromARGB(255, 68, 40, 30),
                   fontWeight: FontWeight.w800,
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 10),
               _buildTextField("First Name", "Enter First Name"),
-              const SizedBox(height: 20),
+              const SizedBox(height: 5),
               _buildTextField("Last Name", "Enter Last Name"),
-              const SizedBox(height: 20),
+              const SizedBox(height: 5),
+              _buildTextField("User Name", "Enter User Name"),
+              const SizedBox(height: 5),
               _buildTextField("Email Address", "Enter Email"),
-              const SizedBox(height: 20),
+              const SizedBox(height: 5),
               _buildTextField("Password", "Enter Password", obscureText: true),
-              const SizedBox(height: 20),
+              const SizedBox(height: 5),
               ElevatedButton(
                 onPressed: () {
                   // Implement your sign-up logic here

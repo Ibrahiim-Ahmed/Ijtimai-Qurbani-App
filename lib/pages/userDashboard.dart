@@ -8,15 +8,19 @@ class UserDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          title: Center(
+        child: Text("User Dashboard"),
+      )),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Text(
-                "Welcome\nUser",
+                "Welcome User",
                 style: TextStyle(
                   fontSize: 40,
                   color: Color.fromARGB(255, 68, 40, 30),
@@ -24,7 +28,7 @@ class UserDashboard extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 30),
               Row(
                 children: [
                   _buildInventoryCard(
@@ -38,7 +42,7 @@ class UserDashboard extends StatelessWidget {
                               builder: (context) => CowInventory()));
                     },
                   ),
-                  const SizedBox(width: 20),
+                  const SizedBox(width: 10),
                   _buildInventoryCard(
                     context,
                     'lib/assets/goat_card_image.png',
@@ -52,11 +56,14 @@ class UserDashboard extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 30),
               _buildSectionTitle('Current Bookings'),
               _buildBookingTable(),
               const SizedBox(height: 30),
               _buildSectionTitle('Past Bookings'),
+              SizedBox(
+                height: 10,
+              ),
               const Center(
                 child: Text(
                   "Nothing to show",
@@ -79,7 +86,7 @@ class UserDashboard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 160,
+        width: 150,
         height: 120,
         decoration: BoxDecoration(
           boxShadow: [
@@ -96,16 +103,16 @@ class UserDashboard extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
         ),
-        child: Center(
-          child: Text(
-            title,
-            style: TextStyle(
-              fontSize: 18,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+        // child: Center(
+        //   child: Text(
+        //     title,
+        //     style: TextStyle(
+        //       fontSize: 18,
+        //       color: Colors.white,
+        //       fontWeight: FontWeight.bold,
+        //     ),
+        //   ),
+        // ),
       ),
     );
   }
@@ -125,7 +132,7 @@ class UserDashboard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 30),
       child: Table(
-        defaultColumnWidth: FixedColumnWidth(60.0),
+        defaultColumnWidth: FixedColumnWidth(56.0),
         border: TableBorder.all(color: Colors.grey),
         children: [
           TableRow(children: [
